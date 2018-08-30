@@ -14,7 +14,8 @@ Rails.application.config.assets.paths << Rails.root.join('vendor/assets/images')
 
 Rails.application.config.assets.paths << Rails.root.join('vendor/assets/javascripts')
 
-# Rails.application.config.assets.paths << Rails.root.join('vendor/assets/stylesheets/css')
+Rails.application.config.assets.paths << Rails.root.join('vendor/assets/stylesheets/css')
+Rails.application.config.assets.paths << Rails.root.join('vendor/assets/stylesheets/scss')
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
