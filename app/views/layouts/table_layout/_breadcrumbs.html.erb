@@ -1,0 +1,28 @@
+<% link_count = local_assigns[:link].length - 1%>
+<div class="breadcrumbs">
+        <div class="col-sm-4">
+            <div class="page-header float-left">
+                <div class="page-title">
+                    <h1>Dashboard</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="page-header float-right">
+                <div class="page-title">
+                    <ol class="breadcrumb text-right">
+                        <% if local_assigns[:link][0] != "Dashboard" %>
+                            <li>
+                                <%= link_to "Dashboard", root_path %>
+                            </li>
+                        <% end %>
+                        <% local_assigns[:link].each_with_index do |l, i| %>
+                            <li class="<%= 'active' if i == link_count %>" >
+                                <%= l %>
+                            </li>
+                        <% end %>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>

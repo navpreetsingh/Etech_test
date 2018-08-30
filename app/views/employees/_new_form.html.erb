@@ -1,0 +1,61 @@
+<% gender = ["Male", "Female", "Others"] %>
+<% limit = [1,2,3,4,5] %>
+
+<%= form_with(model: employee, local: true) do |form| %>
+    <div class="card-body card-block">
+        <div class="errors row form-group">
+            <%= render "form_errors" %>
+        </div>
+        <div class="row form-group">
+            <div class="col-12 col-md-4">
+                <%= form.text_field :role, class: "form-control", placeholder: "Role" %>
+            </div>
+            <div class="col-12 col-md-4">
+                <%= form.text_field :first_name, class: "form-control", placeholder: "First Name", required: true %>
+            </div>
+            <div class="col-12 col-md-4">
+                <%= form.text_field :virtual_name, class: "form-control", placeholder: "Virtual First Name", required: true %>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-12 col-md-4">
+                <%= form.text_field :username_email, class: "form-control", placeholder: "User Name/Email", required: true,  :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}' %>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <%= form.select :gender, options_for_select(gender, :selected => @employee.gender), { prompt: "Gender" }, class: "form-control" %>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <%= form.select :chat_limit, options_for_select(limit, :selected => @employee.chat_limit), { prompt: "Chat Limit" }, class: "form-control" %>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-12 col-md-4">
+                <%= form.select :email_limit, options_for_select(limit, :selected => @employee.email_limit), { prompt: "Email Limit" }, class: "form-control" %>
+            </div>
+            <div class="col-12 col-md-4">
+                <%= form.check_box :is_multisession_allow, class: "form-check-input" %>
+                <%= form.label "Multi-Session/Allowed", class: "form-check-label" %> 
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-12 col-md-4">
+                <%= form.select :select_volume, options_for_select(limit, :selected => @employee.select_volume), { prompt: "Select Volume" }, class: "form-control" %>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <%= form.select :select_ring_type, options_for_select(limit, :selected => @employee.select_ring_type), { prompt: "Select Ring Type" }, class: "form-control" %>
+            </div>
+            
+        </div>
+        <%= form.submit "Save", class: "btn btn-primary" %>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        
+    </div>
+    
+    
+<% end %>

@@ -1,0 +1,51 @@
+// Place all the styles related to the employees controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//  *= require_tree ../../../vendor/assets/stylesheets/css/.
+//  *= require_tree ../../../vendor/assets/stylesheets/css/lib/datatable/.
+
+
+@import "normalize";
+@import "bootstrap.min";
+@import "font-awesome.min";
+@import "themify-icons";
+@import "flag-icon.min";
+@import "cs-skin-elastic";
+@import "lib/datatable/dataTables.bootstrap.min";
+@import "style";
+
+.additional-info-value {
+    padding-left: 45%;
+}
+
+@media only screen and (max-width: 700px) {
+    .additional-info-value {
+        padding-left: 39%;
+    }
+}
+
+.add-additional-info {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.fa-asterisk {
+    vertical-align: super;
+    font-size: 10px;
+}
+
+.operations {
+    width: 1%;
+    text-align: center
+}
+
+.form-check-input{
+    margin-left: 0px !important;
+}
+
+.form-check-label {
+    margin-left: 20px !important;
+}

@@ -1,0 +1,10 @@
+<% if @employee.errors.any? %>
+    <div id="error_explanation ">
+        <h5 class='text-danger'><b><%= pluralize(@employee.errors.count, "error") %> prohibited this employee from being saved:</b></h5>
+        <ul>
+        <% @employee.errors.full_messages.each do |message| %>
+        <li class="text-danger form-control-label"><%= message %></li>
+        <% end %>
+        </ul>
+    </div>
+<% end %>

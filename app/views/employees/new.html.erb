@@ -1,0 +1,39 @@
+<% content_for :head do %>
+    <%= stylesheet_link_tag    'employees', media: 'all' %>
+<% end %>
+
+<%= render "layouts/left_panel", link: 'employees' %>
+
+<!-- Right Panel -->
+
+<div id="right-panel" class="right-panel">
+
+    <%= render "layouts/header" %>
+
+    <%= render "layouts/table_layout/breadcrumbs", link: ['employees'] %>
+
+    <div class="content mt-3">
+        
+        <div class="animated">
+            
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <%= render "layouts/table_layout/card_header", current_title: "Add Employee", header_button: "True" %>
+                        <%= render "new_form", employee: @employee, operation: "Add" %>
+                    </div>
+                    
+                </div>
+
+
+            </div>
+        </div><!-- .animated -->
+    </div><!-- .content -->
+
+
+</div><!-- /#right-panel -->
+
+<!-- Right Panel -->
+
+<%= javascript_include_tag 'jemployees' %>
