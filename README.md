@@ -1,5 +1,7 @@
 # README
 
+Live APP: 
+
 1. Clone Repository
     * git clone git@github.com:navpreetsingh/Etech_test.git
 
@@ -19,6 +21,8 @@
     $ rails s
 
 7. Open Browser and start working on the app at URL: localhost:3000
+
+Admin Panel User: Sufee Admin (https://colorlib.com/polygon/sufee/)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
